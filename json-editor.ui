@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1023</width>
-    <height>600</height>
+    <height>821</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="json_enter">
+   <widget class="QPlainTextEdit" name="json_enter">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -37,6 +37,29 @@
      </rect>
     </property>
    </widget>
+   <widget class="QPushButton" name="beautify_button">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>30</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Beautify</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="console">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>540</y>
+      <width>991</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -51,14 +74,16 @@
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionOPen_File"/>
+    <addaction name="actionOpen_File"/>
     <addaction name="actionSave_File"/>
     <addaction name="actionReload_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionOPen_File">
+  <action name="actionOpen_File">
    <property name="text">
     <string>Open File</string>
    </property>
@@ -71,6 +96,11 @@
   <action name="actionReload_File">
    <property name="text">
     <string>Reload File</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>
