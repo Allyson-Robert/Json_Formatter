@@ -2,22 +2,20 @@
 
 # Form implementation generated from reading ui file 'json-editor.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.1
+# Created by: PyQt5 UI code generator 5.10.1
 #
 # WARNING! All changes made in this file will be lost!
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1023, 600)
+        MainWindow.resize(1023, 821)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.json_enter = QtWidgets.QTextEdit(self.centralwidget)
+        self.json_enter = QtWidgets.QPlainTextEdit(self.centralwidget)
         self.json_enter.setGeometry(QtCore.QRect(20, 30, 401, 501))
         self.json_enter.setObjectName("json_enter")
         self.json_view = QtWidgets.QTextBrowser(self.centralwidget)
@@ -26,6 +24,15 @@ class Ui_MainWindow(object):
         self.beautify_button = QtWidgets.QPushButton(self.centralwidget)
         self.beautify_button.setGeometry(QtCore.QRect(450, 30, 131, 31))
         self.beautify_button.setObjectName("beautify_button")
+        self.console = QtWidgets.QTextBrowser(self.centralwidget)
+        self.console.setGeometry(QtCore.QRect(20, 540, 991, 301))
+        self.console.setObjectName("console")
+        self.treeView = QtWidgets.QTreeView(self.centralwidget)
+        self.treeView.setGeometry(QtCore.QRect(610, 30, 401, 501))
+        self.treeView.setObjectName("treeView")
+        self.tree_button = QtWidgets.QPushButton(self.centralwidget)
+        self.tree_button.setGeometry(QtCore.QRect(450, 70, 131, 31))
+        self.tree_button.setObjectName("tree_button")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1023, 22))
@@ -58,8 +65,10 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.beautify_button.setText(_translate("MainWindow", "Beautify"))
+        self.tree_button.setText(_translate("MainWindow", "Tree View"))
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
         self.actionOpen_File.setText(_translate("MainWindow", "Open File"))
         self.actionSave_File.setText(_translate("MainWindow", "Save File"))
         self.actionReload_File.setText(_translate("MainWindow", "Reload File"))
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
+
