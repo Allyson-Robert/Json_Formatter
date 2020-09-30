@@ -6,7 +6,7 @@ from MainWindow import Ui_MainWindow
 def contains_nest(indict):
     if isinstance(indict, dict):
         for key in indict:
-            if isinstance(indict[key], dict):
+            if isinstance(indict[key], dict) or isinstance(indict[key], list):
                 return True
     return False
 
@@ -41,7 +41,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def on_beautify_click(self):
         contents = self.json_enter.toPlainText()
         result = self._beautify(contents)
-        print(contents, result)
         self.json_view.raise_()
         self.json_view.setText(result)
     
@@ -63,14 +62,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def _populate(self, children, parent):
         # If children is a branch, add and continue
         if isinstance(children, dict):
-            print(children)
             for child in children:
                 if isinstance(child, dict):
                     child_item = QtGui.QStandardItem("")
                 else :
                     child_item = QtGui.QStandardItem(child)
                 parent.appendRow(child_item)
-                print(child, child_item)
                 self._populate(children[child], child_item)
         elif isinstance(children, list):
             for index in range(len(children)):
@@ -80,11 +77,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 else :
                     child_item = QtGui.QStandardItem(child)
                 parent.appendRow(child_item)
-                print(child, child_item)
                 self._populate(child, child_item)
         # If children is a leaf, simply add it
         else :
-            print(children)
             parent.appendRow(QtGui.QStandardItem(str(children)))
     
     def _swap_quotes(self, json_str):
