@@ -62,7 +62,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     
     def _populate(self, children, parent):
         # If children is a branch, add and continue
-        if isinstance(children, dict) and contains_nest(children):
+        if isinstance(children, dict):
             print(children)
             for child in children:
                 if isinstance(child, dict):
