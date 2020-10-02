@@ -59,6 +59,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def _beautify(self, json_str):
         return json.dumps(json.loads(json_str), indent=4)
     
+    #def _populate(self, children, parent):
+    #    if isinstance(children, dict):
+    #        for child in children:
+    #            if contains_nest(children):
+    #                self._populate(children[child], child)
+    #            else :
+    #                print("nonest", child, children[child])
+    #    elif isinstance(children, list):
+    #        for child in children:
+    #            print("list", child)
+    #            self._populate(child, children)
+    #    else :
+    #        print("else", parent, children)
+
     def _populate(self, children, parent):
         # If children is a branch, add and continue
         if isinstance(children, dict):
